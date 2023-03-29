@@ -589,6 +589,10 @@ video {
   width: 83.333333%;
 }
 
+.w-full{
+  width: 100%;
+}
+
 .resize{
   resize: both;
 }
