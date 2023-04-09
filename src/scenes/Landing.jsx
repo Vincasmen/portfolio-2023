@@ -35,8 +35,9 @@ const Landing = ({ setSelectedPage }) => {
           />
         )}
       </div>
-      {/* MAIN SECTION */}
-      <div className="z-30 basis-2/5 mt:mt-32">
+      {/* MAIN TEXT */}
+      <div className="z-30 basis-2/5 mt-12 md:mt-32">
+        {/* HEADINGS */}
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -48,17 +49,47 @@ const Landing = ({ setSelectedPage }) => {
           }}
         >
           <p className="text-6xl font-playfair z-10 text-center md:text-start">
-            Jane {""}
-            <span className="xs: relative xs: text-deep-blue xs:font-semibold z-20 xs: before:content-brush before:absolute before:-left-[25px] before:-top-[70px] before:z-[-1]">
-              Esper
+            Jan {""}
+            <span
+              className="xs:relative xs:text-deep-blue xs:font-semibold z-20 xs:before:content-brush
+              before:absolute before:-left-[25px] before:-top-[70px] before:z-[-1]"
+            >
+              Vincourek
             </span>
           </p>
           <p className="mt-10 mb-7 text-sm text-center md:text-start">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero,
-            beatae nemo? Debitis ratione voluptas optio maxime assumenda
-            inventore a, dolorum eos, praesentium quod ab fugiat pariatur,
-            facere eveniet neque unde?
+            Adipiscing arcu, in aliquam fringilla cursus. Elit arcu elementum
+            viverra malesuada sem ac faucibus dolor. Sagittis scelerisque.
           </p>
+        </motion.div>
+        {/* CALL TO ACTIONS */}
+        <motion.div
+          className="flex mt-5 justify-center md:justify-start"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ delay: 0.2, duration: 0.5 }}
+          variants={{
+            hidden: { opacity: 0, x: -50 },
+            visible: { opacity: 1, x: 0 },
+          }}
+        >
+          <AnchorLink
+            className="bg-gradient-rainblue text-deep-blue rounded-sm py-3 úx-7 font-samibold hover:bg-blue hover:text-white transition duration-500"
+            onClick={() => setSelectedPage("contact")}
+            href="#contact"
+          >
+            Contact Me
+          </AnchorLink>
+          <AnchorLink
+            className="rounded.r.sm bg-gradiant-rainblue py-0.5 pr-0.5"
+            onClick={() => setSelectedPage("contact")}
+            href="#contact"
+          >
+            <div className="bg-deep-blue hover:text-red transition duration-500 w-full h-full flex items-center justify-center font-playfair px-10">
+              Let`s talk.
+            </div>
+          </AnchorLink>
         </motion.div>
       </div>
     </section>
